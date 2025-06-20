@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faith Valencia Portfolio</title>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (e.g., social media, project buttons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Universal Box-Sizing and Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling - Sets up the background gradient seen in the image */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            background: linear-gradient(135deg, #a770ef 0%, #cf8bf3 50%, #fbc2eb 100%); /* Purple gradient */
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            padding: 40px 20px; /* Padding around the main content box */
+        }
+
+        /* Main Content Wrapper - Replicates the white rounded card */
+        .main-content-wrapper {
+            background-color: #ffffff;
+            border-radius: 40px; /* Large rounded corners */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+            max-width: 1200px;
+            width: 100%;
+            overflow: hidden; /* Important for image overflow */
+            position: relative; /* For absolute positioning of hero image */
+        }
+
+        /* Header Styling */
+        header {
+            background: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 800; /* Extra bold */
+            color: #333;
+            letter-spacing: -0.5px;
+        }
+
+        header .logo span {
+            color: #6F2CFF; /* Purple accent for dot */
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            display: flex;
+            gap: 35px; /* Increased gap */
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555; /* Slightly softer text color */
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #6F2CFF; /* Purple highlight on hover */
+        }
+
+        /* Let's Talk Button in Header */
+        .btn-talk {
+            background-color: #6F2CFF;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 25px; /* Pill-shaped button */
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-talk:hover {
+            background-color: #5a22d4; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 80px 50px 0px 50px; /* Adjust padding, especially bottom */
+            position: relative; /* For positioning image */
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 350px; /* Ensure text takes enough space */
+            padding-right: 30px; /* Space between text and image */
+            z-index: 2; /* Ensure text is above image overflow */
+        }
+
+        .hero-text h2 {
+            font-size: 48px; /* Larger font size */
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700; /* Bold */
+            line-height: 1.2;
+        }
+
+        .hero-text h2 strong {
+            color: #333;
+        }
+
+        .hero-text h2 span {
+            color: #6F2CFF; /* Accent color for profession */
+            font-weight: 800; /* Extra bold */
+            display: block;
+            font-size: 58px; /* Very large for "WEB DESIGNER" */
+            margin-top: 10px; /* Space above */
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 35px; /* More space below paragraph */
+            max-width: 450px; /* Constrain paragraph width */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px; /* Space below buttons */
+        }
+
+        .buttons a {
+            padding: 14px 30px; /* Larger padding for buttons */
+            border-radius: 8px; /* Slightly more rounded */
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+            display: inline-flex; /* Use flex for icon and text alignment */
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            font-size: 16px;
+        }
+
+        .btn-dark {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .btn-light-border {
+            border: 2px solid #6F2CFF;
+            color: #6F2CFF;
+            background-color: transparent;
+        }
+
+        .btn-dark:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .btn-light-border:hover {
+            background-color: #6F2CFF;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #666;
+            font-size: 24px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #6F2CFF;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Image Styling */
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Align image to bottom to create overflow effect */
+            min-width: 300px;
+            position: relative;
+            z-index: 1; /* Ensure image is behind text in overflow */
+        }
+
+        .hero-img img {
+            width: 500px; /* Adjust size as needed */
+            height: auto;
+            object-fit: contain; /* Ensure full image is visible */
+            border-radius: 20px; /* Slightly rounded corners for image */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More prominent shadow */
+            transform: translateY(60px); /* Move image down to create overflow */
+            max-width: 100%; /* Ensure responsiveness */
+        }
+        /* General Section Styling */
+        section {
+            padding: 60px 50px;
+            margin: 40px auto 0; /* Adjust top margin for sections */
+            max-width: 1200px;
+            /* background: #ffffff; /* This is handled by main-content-wrapper */
+            /* border-radius: 10px; */
+            /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+        }
+
+        section h2 {
+            font-size: 38px; /* Larger section titles */
+            color: #333;
+            text-align: center;
+            margin-bottom: 50px; /* More space below title */
+            position: relative;
+            font-weight: 700;
+        }
+
+        section h2::after {
+            content: '';
+            width: 80px; /* Wider accent line */
+            height: 5px; /* Thicker accent line */
+            background-color: #6F2CFF;
+            position: absolute;
+            bottom: -15px; /* Move accent line further down */
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section Specifics */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px; /* Increased gap */
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+            text-align: left;
+            font-size: 17px;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 250px; /* Larger min width for image */
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img img {
+            width: 300px; /* Larger circular image */
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* More prominent shadow */
+            border: 6px solid #6F2CFF; /* Thicker accent border */
+        }
+
+        /* Portfolio Section Specifics */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider min width for items */
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: #f8f8f8; /* Lighter background for items */
+            border-radius: 12px; /* More rounded corners */
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Nicer shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 220px; /* Taller image */
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-content {
+            padding: 25px; /* More padding */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-content h3 {
+            font-size: 24px; /* Larger project title */
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .portfolio-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px; /* More space below description */
+        }
+
+        .portfolio-content .btn-light-border {
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 10px 20px; /* Smaller padding for project buttons */
+            font-size: 15px;
+            border-radius: 6px;
+        }
+        
+        /* Contact Section Specifics */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-info p strong {
+            color: #6F2CFF;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px; /* Increased gap between form elements */
+        }
+
+        .contact-form label {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px; /* Larger padding */
+            border: 1px solid #ddd;
+            border-radius: 10px; /* More rounded */
+            font-size: 16px;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfdfd; /* Slightly off-white background */
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px; /* Taller textarea */
+        }
+
+        .contact-form button {
+            background-color: #6F2CFF;
+            color: white;
+            padding: 15px 30px; /* Larger button */
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            align-self: flex-start; /* Align button to start */
+            margin-top: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #5a22d4;
+            transform: translateY(-3px);
+        }
+
+        /* Message Box for Form Feedback */
+        .message-box {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 25px 40px;
+            border-radius: 12px;
+            z-index: 10000;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            pointer-events: none; /* Allows clicks to pass through */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .message-box.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            border: none;
+            outline: none;
+            background-color: #6F2CFF;
+            color: white;
+            cursor: pointer;
+            padding: 15px 20px;
+            border-radius: 50%; /* Circular button */
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #back-to-top:hover {
+            background-color: #5a22d4;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer Styling */
+        footer {
+            background: #222; /* Darker footer */
+            color: #eee;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 80px; /* More space above footer */
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            body {
+                padding: 30px 15px;
+            }
+            .main-content-wrapper {
+                border-radius: 30px;
+            }
+            header {
+                padding: 15px 30px;
+            }
+            nav ul {
+                gap: 25px;
+            }
+            .hero {
+                padding: 60px 30px 0px 30px;
+            }
+            .hero-text h2 {
+                font-size: 40px;
+            }
+            .hero-text h2 span {
+                font-size: 50px;
+            }
+            .hero-img img {
+                width: 450px;
+                transform: translateY(40px);
+            }
+            section {
+                padding: 50px 30px;
+            }
+            section h2 {
+                font-size: 34px;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .main-content-wrapper {
+                border-radius: 20px;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+                align-items: center;
+            }
+            .btn-talk {
+                margin-top: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px 0px 20px;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            .hero-text h2 {
+                font-size: 36px;
+            }
+            .hero-text h2 span {
+                font-size: 45px;
+            }
+            .hero-text p {
+                font-size: 17px;
+                max-width: none; /* Remove max-width on smaller screens */
+            }
+            .buttons {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+                margin-top: 30px;
+            }
+            .hero-img {
+                align-items: center; /* Center image when stacked */
+                margin-top: 20px; /* Space above image */
+            }
+            .hero-img img {
+                width: 350px; /* Smaller image on mobile */
+                transform: translateY(0); /* No overflow effect on small screens */
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 20px;
+                margin: 30px auto 0;
+            }
+
+            section h2 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+
+            .contact-form button {
+                align-self: center; /* Center button */
+            }
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 15px;
+                font-size: 18px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .logo {
+                font-size: 24px;
+            }
+            nav a {
+                font-size: 14px;
+            }
+            .btn-talk {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+            .hero {
+                padding: 40px 15px 0px 15px;
+            }
+            .hero-text h2 {
+                font-size: 30px;
+            }
+            .hero-text h2 span {
+                font-size: 38px;
+            }
+            .hero-text p {
+                font-size: 15px;
+            }
+            .buttons a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .social-icons {
+                font-size: 20px;
+            }
+            .hero-img img {
+                width: 280px;
+            }
+            section {
+                padding: 30px 15px;
+            }
+            section h2 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .about-img img {
+                width: 250px;
+                height: 250px;
+            }
+            .portfolio-content h3 {
+                font-size: 20px;
+            }
+            .portfolio-content p {
+                font-size: 14px;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+            }
+            .contact-form button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+        /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+orm 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 180px; /* Smaller height */
+  object-fit: cover;
+}
+#school-background {
+  padding: 30px 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#school-background h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.school-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.school-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 280px;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.school-box:hover {
+  transform: translateY(-5px);
+}
+
+.school-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.school-box p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Main content wrapper for the white card-like background -->
+    <div class="main-content-wrapper">
+        <header>
+            <div class="logo">Faith Valencia<span>.</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#school-background">School</a></li> <!-- Updated nav link -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-talk">Let's Talk</a>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h2>Hi, I'm <strong>Faith Valencia!</strong><br><span>IT STUDENT</span></h2>
+                <p>Hi! I'm Faith Angelie Valencia, an enthusiastic Information Technology student with a strong passion for technology, problem-solving, and creativity. I enjoy learning about programming, web development, and how tech can solve real-world problems. I'm always curious, always learning — whether it's coding, designing, or discovering the next innovation in the digital world.
+
+My journey in IT is just beginning, but I'm eager to grow, build, and contribute to exciting tech projects that make a difference. Let’s build the future, one line of code at a time!</p>
+                <div class="buttons">
+                    <a href="#portfolio" class="btn-dark">
+                        <i class="fas fa-project-diagram"></i> Projects
+                    </a>
+                    <a href="#contact" class="btn-light-border">
+                        <i class="fas fa-handshake"></i> Hire Me
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/fnox.fetty?igsh=b2hwdzMyZnFjdXNq" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/19afWu6GbM/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- Using the uploaded image for the hero section -->
+                <img src="valencia.jpg.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x600/cccccc/333333?text=Emmy+Rose';" alt="Faith Valencia">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Placeholder image for About Me section -->
+                    <img src="valencia.jpg.jpg" alt="Faith Valencia">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Faith, a passionate and dedicated web designer and developer with a keen eye for detail and a love for creating engaging, user-friendly digital experiences. My journey into web design began with a fascination for how websites are built and how they can connect people and information.</p>
+                    <p>I specialize in front-end development, bringing designs to life with clean, efficient code using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. I am proficient in building responsive layouts that look great on any device, ensuring a seamless user experience across desktops, tablets, and mobile phones.</p>
+                    <p>Beyond coding, I'm a strong believer in continuous learning and staying updated with the latest industry trends and best practices. I enjoy tackling new challenges and am always eager to collaborate on projects that push the boundaries of what's possible on the web. Let's build something amazing together!</p>
+                </div>
+            </div>
+        </section>
+
+       <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>My Projects</h2>
+            <div class="portfolio-grid">
+                <!-- Project: FreeCodeCamp.org -->
+                <div class="portfolio-item">
+                    <img src="freecode.webp" onerror="this.onerror=null;this.src='https://placehold.co/400x220/e0e0e0/555555?text=FreeCodeCamp.org';" alt="FreeCodeCamp.org Thumbnail">
+                    <div class="portfolio-content">
+                        <h3>FreeCodeCamp.org</h3>
+                        <p>FreeCodeCamp.org, a non-profit organization that provides free, self-paced online courses and certifications in various coding topics, including web development (HTML, CSS, JavaScript, React), data science, and more. It's a popular platform for people learning to code and build projects.</p>
+                        <a href="https://www.freecodecamp.org/" class="btn-light-border" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <img src="workbench.jfif" alt="MySQL Workbench Thumbnail">
+                    <div class="portfolio-content">
+                        <h3>MySQL Workbench</h3>
+                        <p>A fully responsive online store featuring product listings, shopping cart functionality, and a secure checkout process.</p>
+                        <a href="https://www.mysql.com/products/workbench/" class="btn-light-border">View Project</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <img src="Figma.png" alt="https://www.figma.com/ Thumbnail">
+                    <div class="portfolio-content">
+                        <h3>Figma</h3>
+                        <p>A dynamic web application for managing tasks, allowing users to add, edit, and delete items with local storage persistence.</p>
+                        <a href="https://www.figma.com/" class="btn-light-border">View Project</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <img src="cnv.jfif" alt="Canva Thumbnail">
+                    <div class="portfolio-content">
+                        <h3>Canva</h3>
+                        <p>A sleek and modern blog platform with an intuitive interface for content creation and reading, showcasing responsive design principles.</p>
+                        <a href="https://www.canva.com/" class="btn-light-border">View Project</a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="portfolio-item">
+                    <img src="Visual_Studio_Code_1.35_icon.svg.png" alt="Visual Studio Code Thumbnail">
+                    <div class="portfolio-content">
+                        <h3>Visual Studio Code</h3>
+                        <p>An application that fetches and displays real-time weather data using a public API, with dynamic background changes based on conditions.</p>
+                        <a href="https://code.visualstudio.com/" class="btn-light-border">View Project</a>
+                    </div>
+                </div>
+            </div>
+     <!-- School Background Section -->
+  <section id="school-background">
+    <h2>Elementary</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="bacong.jfif" alt="Bacong"
+             onerror="this.onerror=null;this.src='https://placehold.co/400x220/eeeeee/333333?text=Asian+College';">
+        <div class="portfolio-content">
+          <h3>Bacong Central School</h3>
+          <p>Bacong Central School is a public elementary school located in Bacong, Negros Oriental, Philippines. It is administered under the Bacong School District, which is part of the Schools Division of Negros Oriental. The school is situated in Roxas Street, West Poblacion, Bacong. Bacong Central School is known for its commitment to education and its participation in initiatives like Brigada Eskwela and the Literacy Enhancement and Numeracy Development Camp (LEND-C). </p>
+          <a href="https://bacongdistrict.weebly.com/bacong-central-school.html" class="btn-light-border" target="_blank">Visit School Website</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- School Background Section -->
+  <section id="school-background">
+    <h2>High School</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="San Mig.jfif" alt="Asian College"
+             onerror="this.onerror=null;this.src='https://placehold.co/400x220/eeeeee/333333?text=Asian+College';">
+        <div class="portfolio-content">
+          <h3>San Miguel National High School</h3>
+          <p>San Miguel Provincial Community High School is the name of the school. It was first funded by the Provincial Government, headed by Governor Emilio Macias, II through the effort of the Barangay Captain Cesar D. Blanco and with the support of his council and most of all to Mr. Virgilio B. Aranas, a mentor, an educator and a member of a council sponsored a resolution for the establishment of a Public High School in the Barangay in May 1991.
+ </p>
+          <a href="https://g.co/kgs/FLGpuJ6" class="btn-light-border" target="_blank">Visit School Website</a>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- School Background Section -->
+  <section id="school-background">
+    <h2>College</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="asian_college_of_science_and_technology_logo.jfif" alt="Asian College"
+             onerror="this.onerror=null;this.src='https://placehold.co/400x220/eeeeee/333333?text=Asian+College';">
+        <div class="portfolio-content">
+          <h3>Asian College</h3>
+          <p>I earned my Bachelor of Information Technology major in Computer Programming from Asian College. My education focused on coding, UI/UX, software development, and real-world IT projects.</p>
+          <a href="https://www.asiancollege.edu.ph/" class="btn-light-border" target="_blank">Visit School Website</a>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                    <p><strong>Email:</strong> faithval@gmail.com</p>
+                    <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+                    <p><strong>Location:</strong> Bacong, Negros Oriental</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Subject of your message">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Faith. All rights reserved.</p>
+        </footer>
+    </div> <!-- End of main-content-wrapper -->
+
+    <button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Message box for form feedback -->
+    <div id="messageBox" class="message-box"></div>
+
+    <script>
+        // Function to show custom message box
+        function showMessageBox(message, type = 'info') {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = message;
+            messageBox.className = 'message-box show'; // Reset classes and add 'show'
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the target element using its ID
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Get the back-to-top button
+        let mybutton = document.getElementById("back-to-top");
+
+        // When the user scrolls down 200px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "flex"; /* Use flex to center icon */
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // Contact Form Validation and Submission (using custom message box)
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || subject === '' || message === '') {
+                showMessageBox('Please fill in all fields.', 'error');
+                return;
+            }
+
+            // Basic email validation regex
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showMessageBox('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // If all validations pass, you can simulate form submission
+            showMessageBox('Thank you for your message! We will get back to you shortly.', 'success');
+            this.reset(); // Clear the form
+        });
+    </script>
+
+</body>
+</html>
